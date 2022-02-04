@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Phaser game class</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.55.2/phaser.min.js"></script>
+		
+	</head>
+
+	<body>
+
+		<h1>Title 1</h1>
+		
+		<img src="character.png"/>
+
+		<script>
+			const SCREEN_WIDTH = 800;
+			const SCREEN_HEIGHT = 600;
+
+			let robotIdleSprite;
+
+			let config = {
+				width: SCREEN_WIDTH,
+				height: SCREEN_HEIGHT,
+				scene:{
+				preload: preload,
+				create: create,
+				update: update
+				}
+			};
+
+			let game = new Phaser.Game(config);
+		
+			function preload(){
+
+				this.load.image("robotIdleSpriteID", "character.png");
+
+			}
+
+			function create(){
+				image = this.add.image(400,300,"robotIdleSpriteID");
+			}
+			
+			function update(){image.rotation+=0.1;}
+
+		</script>
+
+	</body>
+
+	
+</html>
