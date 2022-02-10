@@ -3,27 +3,27 @@
 let http = require("http");
 let fs = require("fs");
 
+
 http.createServer(function(request, response){
 
-	if(request.url == "/character.png"){
 	
-		fs.readFile("character.png", function(error, data){
+function uploadAsset(name){
 
-			if(error){ console.log("Error"); return}
+	fs.readFile(name, function(error, data){
 
-			response.writeHead(200);
+	if(error){ console.log("Error"); return}
 
-			response.end(data);
-		})
-	}
+	response.writeHead(200);
 
-	fs.readFile("index.html", function(error, data){
+	response.end(data);
 
-		if(error){ console.log("Error"); return}
+	});
+}
 
-		response.writeHead(200);
+if(request.url == "/character.png"){
+	uploadAsset("character.png");
+}
 
-		response.end(data);
-	})
+uploadAsset("index.html");
 
 }).listen(1095);
