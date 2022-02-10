@@ -8,9 +8,7 @@
 
 	<body>
 
-		<h1>Title 1</h1>
-		
-		<img src="character.png"/>
+				<h1>Robo Madness</h1>	
 
 		<script>
 			const SCREEN_WIDTH = 800;
@@ -32,15 +30,33 @@
 		
 			function preload(){
 
+
 				this.load.image("robotIdleSpriteID", "character.png");
 
+				this.load.image("car_1", "character_black_red.png");
+				this.load.image("car_2", "character_blonde_white.png");
+				this.load.image("car_3", "character_brown_red.png");
+				this.load.image("car_4", "racer_green.png");
+				this.load.image("background", "road_background.png");
 			}
 
 			function create(){
-				image = this.add.image(400,300,"robotIdleSpriteID");
+			
+				background = this.add.image(400,300,"background");
+				robot = this.add.image(200,20,"robotIdleSpriteID");
+
+				car_1 = this.add.image(50,150,"car_1");
+				car_1.rotation += -3.14/2;
+				car_2 = this.add.image(50,250,"car_2");
+				car_2.rotation += -3.14/2;
+				car_3 = this.add.image(50,350,"car_3");
+				car_3.rotation += -3.14/2;
+				car_4 = this.add.image(50,450,"car_4");
+				car_4.rotation += 3.14/2;
 			}
 			
-			function update(){image.rotation+=0.1;}
+			function update(){;}
+
 
 		</script>
 
